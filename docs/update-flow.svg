@@ -1,0 +1,51 @@
+<svg width="100%" viewBox="0 0 680 190" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Fluxo de Atualização — DevOps Challenge 2025</title>
+  <desc>Fluxo de atualização: code change, docker build, compose up --no-deps, container live. Outros serviços não são afetados.</desc>
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      text { font-family: sans-serif; }
+      .label { font-size: 11px; fill: #555; }
+      .title { font-size: 13px; font-weight: 600; fill: #1a1a1a; }
+      .sub { font-size: 11px; fill: #666; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="680" height="190" fill="white"/>
+
+  <text class="label" x="340" y="20" text-anchor="middle">fluxo de atualização de código ou infra</text>
+
+  <!-- Box 1 -->
+  <rect x="30" y="38" width="130" height="56" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text class="title" x="95" y="60" text-anchor="middle">code change</text>
+  <text class="sub" x="95" y="80" text-anchor="middle">edit · git push</text>
+
+  <!-- Box 2 -->
+  <rect x="210" y="38" width="138" height="56" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text class="title" x="279" y="60" text-anchor="middle">docker build</text>
+  <text class="sub" x="279" y="80" text-anchor="middle">nova imagem</text>
+
+  <!-- Box 3 -->
+  <rect x="400" y="38" width="155" height="56" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text class="title" x="477" y="60" text-anchor="middle">compose up -d</text>
+  <text class="sub" x="477" y="80" text-anchor="middle">--no-deps &lt;service&gt;</text>
+
+  <!-- Box 4 -->
+  <rect x="608" y="38" width="58" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text class="title" x="637" y="60" text-anchor="middle">live</text>
+  <text class="sub" x="637" y="80" text-anchor="middle">✓</text>
+
+  <!-- Arrows -->
+  <line x1="160" y1="66" x2="210" y2="66" stroke="#555" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <line x1="348" y1="66" x2="400" y2="66" stroke="#555" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <line x1="555" y1="66" x2="608" y2="66" stroke="#555" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+  <!-- Notes -->
+  <rect x="30" y="116" width="380" height="34" rx="6" fill="none" stroke="#ccc" stroke-width="0.5"/>
+  <text class="label" x="50" y="137">Outros serviços permanecem ativos sem interrupção durante o update</text>
+
+  <rect x="425" y="116" width="230" height="34" rx="6" fill="none" stroke="#ccc" stroke-width="0.5"/>
+  <text class="label" x="445" y="137">Nginx: basta recarregar a config (reload)</text>
+</svg>
