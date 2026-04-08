@@ -5,3 +5,11 @@ scrape_configs:
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']
+
+  - job_name: 'release-service'
+    static_configs:
+      - targets: ['release-service:8000']
+
+  - job_name: 'infra-service'
+    static_configs:
+      - targets: ['infra-service:8080']
