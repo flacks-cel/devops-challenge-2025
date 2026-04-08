@@ -1,6 +1,44 @@
-# DevOps Challenge 2025
+#  Two microservices with HTTP cache, observability and one-command startup
 
-Infraestrutura com duas aplicações em linguagens diferentes, camada de cache HTTP, observabilidade completa e execução simplificada via Docker Compose.
+---
+
+## Quick Start
+
+```bash
+docker compose up --build
+```
+
+| Serviço | URL |
+|---|---|
+| release-service | http://localhost/release/ |
+| infra-service | http://localhost/infra/ |
+| Grafana | http://localhost:3000 |
+| Prometheus | http://localhost:9090 |
+
+```bash
+# Demonstrar o cache ao vivo
+bash demo.sh
+```
+
+---
+
+## Requisitos atendidos
+
+| Requisito | Solução |
+|---|---|
+| Duas aplicações em linguagens diferentes | Python (FastAPI) + Go (net/http) |
+| Rota retornando texto fixo | `GET /release/` e `GET /infra/` |
+| Rota retornando horário do servidor | `GET /release/time` e `GET /infra/time` |
+| Cache com tempos diferentes | Nginx proxy_cache — release 10s, infra 60s |
+| Cache **no proxy, não na aplicação** | `proxy_cache` no Nginx — apps não têm lógica de cache |
+| Fácil de iniciar | `docker compose up --build` — um único comando |
+| Observabilidade | Prometheus + Grafana provisionados automaticamente |
+| Diagrama de arquitetura | `docs/architecture.svg` |
+| Fluxo de atualização | `docs/update-flow.svg` |
+| Pontos de melhoria | Seção dedicada no README |
+| Boas práticas Git | Conventional Commits, .gitignore, histórico limpo |
+
+---
 
 ---
 
