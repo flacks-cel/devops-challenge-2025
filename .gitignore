@@ -1,21 +1,12 @@
-# Python
 __pycache__/
 *.pyc
 *.pyo
 .venv/
 venv/
-
-# Go
 *.exe
 *.out
-
-# Docker
 .docker/
-
-# OS
 .DS_Store
 Thumbs.db
-
-# Editor
 .vscode/
 *.swp
