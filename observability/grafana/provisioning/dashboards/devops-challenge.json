@@ -3,23 +3,14 @@
   "uid": "devops-challenge",
   "schemaVersion": 36,
   "version": 1,
-  "__inputs": [
-    {
-      "name": "DS_PROMETHEUS",
-      "type": "datasource",
-      "pluginId": "prometheus"
-    }
-  ],
-  "__requires": [],
   "panels": [
     {
       "type": "timeseries",
       "title": "Requests por endpoint — infra-service",
       "gridPos": { "x": 0, "y": 0, "w": 24, "h": 8 },
-      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "datasource": "Prometheus",
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
           "expr": "infra_requests_total",
           "legendFormat": "{{endpoint}}",
           "refId": "A"
@@ -30,10 +21,9 @@
       "type": "stat",
       "title": "Serviços UP",
       "gridPos": { "x": 0, "y": 8, "w": 6, "h": 4 },
-      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "datasource": "Prometheus",
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
           "expr": "up",
           "legendFormat": "{{job}}",
           "refId": "A"
@@ -44,10 +34,9 @@
       "type": "timeseries",
       "title": "Duração do Scrape",
       "gridPos": { "x": 6, "y": 8, "w": 18, "h": 4 },
-      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "datasource": "Prometheus",
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
           "expr": "scrape_duration_seconds",
           "legendFormat": "{{job}}",
           "refId": "A"
